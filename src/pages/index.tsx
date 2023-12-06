@@ -22,9 +22,12 @@ export default function Home() {
     if (scores.Player == 4 || scores.CPU == 4) {
       if (scores.Player == 4) {
         setStart(false);
+        clearInterval(intervalRef.current);
         alert("Player won");
       } else {
         setStart(false);
+        clearInterval(intervalRef.current);
+
         alert("CPU won");
       }
       setScores({ Player: 0, CPU: 0 });
@@ -61,8 +64,6 @@ export default function Home() {
   };
 
   if (!intervalRef.current && start) {
-    console.log(start);
-
     intervalRef.current = setInterval(() => {
       settimer((timer: any) => timer + 0.1);
     }, 100);
