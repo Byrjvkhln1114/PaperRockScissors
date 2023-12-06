@@ -27,7 +27,6 @@ export default function Home() {
       } else {
         setStart(false);
         clearInterval(intervalRef.current);
-
         alert("CPU won");
       }
       setScores({ Player: 0, CPU: 0 });
@@ -63,11 +62,12 @@ export default function Home() {
     }
   };
 
-  if (!intervalRef.current && start) {
+  const starter = () => {
+    setStart(true);
     intervalRef.current = setInterval(() => {
       settimer((timer: any) => timer + 0.1);
     }, 100);
-  }
+  };
 
   useEffect(() => {
     if (timer === 10.09999999999998) {
@@ -134,7 +134,7 @@ export default function Home() {
           ) : (
             <div className=" h-[100%] grid place-content-center">
               <button
-                onClick={() => setStart(true)}
+                onClick={() => starter()}
                 className="rounded bg-green-500 px-6 py-3 text-white text-2xl "
               >
                 Start
