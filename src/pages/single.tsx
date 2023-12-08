@@ -7,7 +7,7 @@ const outcomes = {
   "✂️": { "🗿": -1, "🧻": 1, "✂️": 0 },
 };
 const DefaultChoices: Choice[] = ["🗿", "✂️", "🧻"];
-export default function Single() {
+export default function Home() {
   const [userchoiceA, setuserchoiceA] = useState<Choice[]>([]);
   const [cpuchoiceA, setcpuchoiceA] = useState<Choice[]>([]);
   const [titlestore, settitlestore] = useState<Title[]>([]);
@@ -86,7 +86,7 @@ export default function Single() {
           <div className="text-red-500">{scores.CPU}</div>:
           <div className=" text-blue-500">{scores.Player}</div>
         </div>
-        <div className="text-2xl">PLAYER</div>
+        <div className="text-2xl">YOU</div>
       </div>
       <div
         style={{
@@ -112,7 +112,7 @@ export default function Single() {
               return (
                 <div key={i}>
                   <div className="flex items-center justify-end gap-3">
-                    <div className="text-lg">{userchoiceA[i]}</div>:
+                    <div className="text-2xl">{userchoiceA[i]}</div>:
                     <img
                       className="w-12 rounded-full "
                       src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
@@ -126,7 +126,7 @@ export default function Single() {
                       src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
                       alt=""
                     />
-                    : <div className="text-lg">{cpuchoiceA[i]}</div>
+                    : <div className="text-2xl">{cpuchoiceA[i]}</div>
                   </div>
                   <div className="w-full flex justify-center border-b-2">
                     {titlestore[i]}

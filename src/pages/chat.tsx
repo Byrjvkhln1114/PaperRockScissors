@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import * as Ably from "ably";
 import React from "react";
-
+// import "./chat.css";
 const client = new Ably.Realtime(
   "F7535w.UF0GVA:AF34Dbhvs7uDnyt1p3tT5c7qvkkXWkD1kNI9ZKMiXvE"
 );
@@ -59,21 +59,21 @@ export default function ChatScreen() {
         ))}
         <div ref={bottomRef} />
       </div>
-      <textarea
-        value={message}
-        onChange={(e) => {
-          setMessage(e.target.value);
-        }}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            handleSendMessage(message);
-            setMessage("");
-            return false;
-          }
-        }}
-        autoFocus
-        className="fixed left-4 right-4 bottom-4 h-24 bg-gray-800 text-white p-2 rounded-lg resize-none"
-      />
+      <div className="flex gap-3">
+        <input
+          className="rounded w-[80%] bg-slate-900"
+          value={message}
+          onChange={(e) => {
+            setMessage(e.target.value);
+          }}
+        />
+        <button
+          className="border border-green-500 rounded p-3 text-green-500"
+          onClick={() => (handleSendMessage(message), setMessage(""))}
+        >
+          Send
+        </button>
+      </div>
     </div>
   );
 }
