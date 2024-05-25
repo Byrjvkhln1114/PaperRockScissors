@@ -208,7 +208,7 @@ export default function Home() {
               alt=""
             />
             :{" "}
-            <div style={{ color: "white" }} className="text-lg">
+            <div style={{ color: "white" }} className="text-lg fw-bold">
               {questions[0]}
             </div>
           </div>
@@ -222,7 +222,10 @@ export default function Home() {
               return (
                 <div key={i}>
                   <div className="flex items-center justify-end gap-3">
-                    <div className="text-lg text-warning">{userchoiceA[i]}</div>:
+                    <div className={`text-lg text-${userchoiceA[i] == "yes" ? "success" : "warning"} fw-bold`}>
+                      {userchoiceA[i]}
+                    </div>
+                    :
                     <img
                       className="w-12 rounded-full "
                       src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
@@ -237,7 +240,7 @@ export default function Home() {
                       alt=""
                     />
                     :{" "}
-                    <div style={{ color: "white" }} className="text-lg">
+                    <div style={{ color: "white" }} className="text-lg fw-bold">
                       {questions[i + 1]}
                     </div>
                   </div>
@@ -249,7 +252,7 @@ export default function Home() {
               <button
                 onClick={() => starter()}
                 style={{ backgroundColor: "#FF7718" }}
-                className="rounded  px-6 py-3 text-white text-xl "
+                className="rounded  px-6 py-3 text-white text-xl fw-bold "
               >
                 Start
               </button>
