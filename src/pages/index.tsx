@@ -188,19 +188,19 @@ export default function Home() {
           style={{ width: `${timer * 10}%`, transition: "0.5s" }}
           className={` h-[5px] bg-green-500 rounded-lg`}
         ></div>{" "}
-        <div style={{ borderBottom: "1px solid grey" }} className="w-full h-16 px-4 flex items-center gap-5 ">
+        <div style={{ borderBottom: "1px solid grey" }} className="w-full h-16 px-4 flex items-center gap-3 ">
           <img
             className="w-12 rounded-full "
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+            src="https://scontent.fuln6-1.fna.fbcdn.net/v/t1.15752-9/445817274_471884305343131_3730395385950465228_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a1m99vBomlcQ7kNvgGQRNd3&_nc_ht=scontent.fuln6-1.fna&oh=03_Q7cD1QFphWMDaSgR0UpxYeLXLWUvhMVZRsqnfrpcP8YEUh5bqA&oe=6678F4E1"
             alt=""
           />
-          <div className="text-md font-bold text-">what will be your choice?</div>
+          <div className="text-md font-bold text-">What will be your choice?</div>
         </div>
         <div className=" h-[88%] p-4 flex flex-col gap-2  overflow-scroll ">
           <div style={{ display: start ? "flex" : "none" }} className="flex items-center gap-3">
             <img
               className="w-12 rounded-full "
-              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+              src="https://scontent.fuln6-1.fna.fbcdn.net/v/t1.15752-9/445817274_471884305343131_3730395385950465228_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a1m99vBomlcQ7kNvgGQRNd3&_nc_ht=scontent.fuln6-1.fna&oh=03_Q7cD1QFphWMDaSgR0UpxYeLXLWUvhMVZRsqnfrpcP8YEUh5bqA&oe=6678F4E1"
               alt=""
             />
             : <div className="text-lg">{questions[0]}</div>
@@ -226,7 +226,7 @@ export default function Home() {
                   <div className="flex items-center gap-3">
                     <img
                       className="w-12 rounded-full "
-                      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                      src="https://scontent.fuln6-1.fna.fbcdn.net/v/t1.15752-9/445817274_471884305343131_3730395385950465228_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a1m99vBomlcQ7kNvgGQRNd3&_nc_ht=scontent.fuln6-1.fna&oh=03_Q7cD1QFphWMDaSgR0UpxYeLXLWUvhMVZRsqnfrpcP8YEUh5bqA&oe=6678F4E1"
                       alt=""
                     />
                     : <div className="text-lg">{questions[i + 1]}</div>
@@ -246,14 +246,14 @@ export default function Home() {
       </div>
       <div className=" flex gap-3 ">
         <div
-          className=" p-4 text-5xl rounded bg-white cursor-pointer butt"
+          className=" p-4 text-3xl rounded bg-white cursor-pointer butt"
           style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" }}
           onClick={() => handleUserChoice("yes")}
         >
           yes
         </div>
         <div
-          className=" p-4 text-5xl rounded bg-white cursor-pointer butt"
+          className=" p-4 text-3xl rounded bg-white cursor-pointer butt"
           style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" }}
           onClick={() => handleUserChoice("no")}
         >
