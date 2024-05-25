@@ -195,7 +195,7 @@ export default function Home() {
         <div style={{ borderBottom: "1px solid grey" }} className="w-full h-16 px-4 flex items-center gap-3 ">
           <img
             className="w-12 rounded-full "
-            src="https://scontent.fuln6-1.fna.fbcdn.net/v/t1.15752-9/445817274_471884305343131_3730395385950465228_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a1m99vBomlcQ7kNvgGQRNd3&_nc_ht=scontent.fuln6-1.fna&oh=03_Q7cD1QFphWMDaSgR0UpxYeLXLWUvhMVZRsqnfrpcP8YEUh5bqA&oe=6678F4E1"
+            src="https://scontent.fuln6-1.fna.fbcdn.net/v/t1.15752-9/441923974_391137510565008_4804870506305460155_n.png?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ch5qSOBf9GAQ7kNvgFYl6AT&_nc_ht=scontent.fuln6-1.fna&oh=03_Q7cD1QFD9brc4e5dt-HOOwoQhJdqUNp8k071FwAxXihTae0ShA&oe=66791318"
             alt=""
           />
           <div className="text-md font-bold text-">What will be your choice?</div>
@@ -204,7 +204,7 @@ export default function Home() {
           <div style={{ display: start ? "flex" : "none" }} className="flex items-center gap-3">
             <img
               className="w-12 rounded-full "
-              src="https://scontent.fuln6-1.fna.fbcdn.net/v/t1.15752-9/445817274_471884305343131_3730395385950465228_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a1m99vBomlcQ7kNvgGQRNd3&_nc_ht=scontent.fuln6-1.fna&oh=03_Q7cD1QFphWMDaSgR0UpxYeLXLWUvhMVZRsqnfrpcP8YEUh5bqA&oe=6678F4E1"
+              src="https://scontent.fuln6-1.fna.fbcdn.net/v/t1.15752-9/441923974_391137510565008_4804870506305460155_n.png?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ch5qSOBf9GAQ7kNvgFYl6AT&_nc_ht=scontent.fuln6-1.fna&oh=03_Q7cD1QFD9brc4e5dt-HOOwoQhJdqUNp8k071FwAxXihTae0ShA&oe=66791318"
               alt=""
             />
             :{" "}
@@ -233,7 +233,7 @@ export default function Home() {
                   <div className="flex items-center gap-3">
                     <img
                       className="w-12 rounded-full "
-                      src="https://scontent.fuln6-1.fna.fbcdn.net/v/t1.15752-9/445817274_471884305343131_3730395385950465228_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a1m99vBomlcQ7kNvgGQRNd3&_nc_ht=scontent.fuln6-1.fna&oh=03_Q7cD1QFphWMDaSgR0UpxYeLXLWUvhMVZRsqnfrpcP8YEUh5bqA&oe=6678F4E1"
+                      src="https://scontent.fuln6-1.fna.fbcdn.net/v/t1.15752-9/441923974_391137510565008_4804870506305460155_n.png?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ch5qSOBf9GAQ7kNvgFYl6AT&_nc_ht=scontent.fuln6-1.fna&oh=03_Q7cD1QFD9brc4e5dt-HOOwoQhJdqUNp8k071FwAxXihTae0ShA&oe=66791318"
                       alt=""
                     />
                     :{" "}
