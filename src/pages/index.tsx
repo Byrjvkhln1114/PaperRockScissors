@@ -132,12 +132,16 @@ export default function Home() {
   };
 
   const starter = () => {
+    prd = 0;
+    settimer(0);
+    setPeriod(0);
     setStart(true);
     setEnd(false);
     intervalRef.current = setInterval(() => {
       settimer((timer: any) => timer + 0.1);
     }, 100);
   };
+  console.log(period);
 
   useEffect(() => {
     // setPeriod(Number(timer) + Number(period));
@@ -147,46 +151,46 @@ export default function Home() {
       handleUserChoice(userRandoms);
     }
   }, [timer]);
-  console.log(period);
 
   return (
-    <div className="h-screen flex flex-col gap-3 justify-center items-center bg-slate-100">
-      <Modal className="w-100" show={show} onHide={handleClose}>
+    <div style={{ backgroundColor: "#323437" }} className="h-screen flex flex-col gap-3 justify-center items-center">
+      <Modal className="w-100 " show={show} onHide={handleClose}>
         <div
           style={{
             borderRadius: "7px",
+            backgroundColor: "#323437",
           }}
           className="text-light"
         >
           <Modal.Body>
-            <div style={{ color: "black" }}>
+            <div style={{ color: "white" }}>
               Here is the fate of your country based on your answers. In real life you would not be able to replay and
               redo. But this is a video game, you may have another try.
             </div>
             <br />
-            <h1 style={{ color: "black" }}>Result:</h1>
+            <h1 style={{ color: "white" }}>Result:</h1>
             <div style={{ fontSize: 25, fontWeight: "bold", color: "red" }}> {result}</div>
             <br />
-            <h1 style={{ color: "black" }}>Time:</h1>
-            <div style={{ color: "black", fontSize: 25 }}>
+            <h1 style={{ color: "white" }}>Time:</h1>
+            <div style={{ color: "white", fontSize: 20, fontWeight: "bold" }}>
               Also you spent <span style={{ color: "green" }}>{Math.floor(period)} seconds</span> on the questions that
               may affect the lives of an entire nation. Do you think you spent enough time or too much time?
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={() => (handleClose(), setPeriod(0))}>Ok</Button>
+            <Button
+              style={{ width: "130px", height: "50px", fontSize: "20px", backgroundColor: "#FF7718", border: "none" }}
+              onClick={() => (handleClose(), setPeriod(0))}
+            >
+              Try Again
+            </Button>
           </Modal.Footer>
         </div>
       </Modal>
-      <div
-        style={{
-          boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-        }}
-        className="w-[80vw] rounded-lg  h-[70vh] bg-white"
-      >
+      <div className="w-[80vw] rounded-lg  h-[70vh] bg-dark">
         <div
-          style={{ width: `${timer * 10}%`, transition: "0.5s" }}
-          className={` h-[5px] bg-green-500 rounded-lg`}
+          style={{ width: `${timer * 10}%`, transition: "0.5s", backgroundColor: "#FF7718" }}
+          className={` h-[5px]  rounded-lg`}
         ></div>{" "}
         <div style={{ borderBottom: "1px solid grey" }} className="w-full h-16 px-4 flex items-center gap-3 ">
           <img
@@ -203,7 +207,10 @@ export default function Home() {
               src="https://scontent.fuln6-1.fna.fbcdn.net/v/t1.15752-9/445817274_471884305343131_3730395385950465228_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a1m99vBomlcQ7kNvgGQRNd3&_nc_ht=scontent.fuln6-1.fna&oh=03_Q7cD1QFphWMDaSgR0UpxYeLXLWUvhMVZRsqnfrpcP8YEUh5bqA&oe=6678F4E1"
               alt=""
             />
-            : <div className="text-lg">{questions[0]}</div>
+            :{" "}
+            <div style={{ color: "white" }} className="text-lg">
+              {questions[0]}
+            </div>
           </div>
           {start ? (
             userchoiceA.map((userchoice, i) => {
@@ -215,7 +222,7 @@ export default function Home() {
               return (
                 <div key={i}>
                   <div className="flex items-center justify-end gap-3">
-                    <div className="text-lg">{userchoiceA[i]}</div>:
+                    <div className="text-lg text-warning">{userchoiceA[i]}</div>:
                     <img
                       className="w-12 rounded-full "
                       src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
@@ -229,14 +236,21 @@ export default function Home() {
                       src="https://scontent.fuln6-1.fna.fbcdn.net/v/t1.15752-9/445817274_471884305343131_3730395385950465228_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a1m99vBomlcQ7kNvgGQRNd3&_nc_ht=scontent.fuln6-1.fna&oh=03_Q7cD1QFphWMDaSgR0UpxYeLXLWUvhMVZRsqnfrpcP8YEUh5bqA&oe=6678F4E1"
                       alt=""
                     />
-                    : <div className="text-lg">{questions[i + 1]}</div>
+                    :{" "}
+                    <div style={{ color: "white" }} className="text-lg">
+                      {questions[i + 1]}
+                    </div>
                   </div>
                 </div>
               );
             })
           ) : (
             <div className=" h-[100%] grid place-content-center">
-              <button onClick={() => starter()} className="rounded bg-green-500 px-6 py-3 text-white text-2xl ">
+              <button
+                onClick={() => starter()}
+                style={{ backgroundColor: "#FF7718" }}
+                className="rounded  px-6 py-3 text-white text-xl "
+              >
                 Start
               </button>
             </div>
@@ -246,15 +260,15 @@ export default function Home() {
       </div>
       <div className=" flex gap-3 ">
         <div
-          className=" p-4 text-3xl rounded bg-white cursor-pointer butt"
-          style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" }}
+          className=" p-4 text-3xl rounded bg-dark cursor-pointer butt"
+          style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px", color: "white" }}
           onClick={() => handleUserChoice("yes")}
         >
           yes
         </div>
         <div
-          className=" p-4 text-3xl rounded bg-white cursor-pointer butt"
-          style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" }}
+          className=" p-4 text-3xl rounded bg-dark cursor-pointer butt"
+          style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px", color: "white" }}
           onClick={() => handleUserChoice("no")}
         >
           no
