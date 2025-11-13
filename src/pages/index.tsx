@@ -15,7 +15,7 @@ export default function Home() {
   const [timer, settimer] = useState<any>(0);
   const [start, setStart] = useState<boolean>(false);
   const intervalRef = useRef<any>(null);
-
+  const bottomRef = useRef<HTMLDivElement>(null);
   const userchoices: Choice[] = [];
   const cpuchoices: Choice[] = [];
   useEffect(() => {
@@ -75,13 +75,16 @@ export default function Home() {
       handleUserChoice(userRandoms);
     }
   }, [timer]);
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [userchoiceA]);
+
   return (
     <div className="h-screen flex flex-col gap-3 justify-center items-center bg-slate-100">
       <div className="flex gap-3 w-full justify-around my-2">
         <div className="text-2xl flex ">CPU</div>
         <div className="text-3xl flex gap-3">
-          <div className="text-red-500">{scores.CPU}</div>:
-          <div className=" text-blue-500">{scores.Player}</div>
+          <div className="text-red-500">{scores.CPU}</div>:<div className=" text-blue-500">{scores.Player}</div>
         </div>
         <div className="text-2xl">PLAYER</div>
       </div>
@@ -125,22 +128,18 @@ export default function Home() {
                     />
                     : <div className="text-lg">{cpuchoiceA[i]}</div>
                   </div>
-                  <div className="w-full flex justify-center border-b-2">
-                    {titlestore[i]}
-                  </div>
+                  <div className="w-full flex justify-center border-b-2">{titlestore[i]}</div>
                 </div>
               );
             })
           ) : (
             <div className=" h-[100%] grid place-content-center">
-              <button
-                onClick={() => starter()}
-                className="rounded bg-green-500 px-6 py-3 text-white text-2xl "
-              >
+              <button onClick={() => starter()} className="rounded bg-green-500 px-6 py-3 text-white text-2xl ">
                 Start
               </button>
             </div>
           )}
+          <div ref={bottomRef}></div>
         </div>
       </div>
       <div className=" flex gap-3 ">
